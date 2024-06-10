@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    background: cadetblue;
+}
+
+ul {
+    width: 95vw;
+    height: 10vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: whitesmoke;
+}
+
+ul li {
+    display: inline-block;
+    transform-style: preserve-3d;
+}
+
+ul li a {
+    color: black;
+    font-size: 2.99vw;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+ul li a div {
+    display: block;
+    padding: 3vw;
+}
+
+ul li a div::before {
+    content: attr(title);
+    position: absolute;
+    top: 0; 
+    left: 0;
+    background: darkorange;
+    color: whitesmoke;
+    padding: 3vw;
+    transition: 0.3s;
+    transform: rotateX('90deg') translateY(8vw);
+    transform-origin: bottom;
+}
+
+ul li a div:hover:before {
+    transform: rotateX(0deg) translateY(0vw);
+}
+
+ul li a div:after {
+    content: attr(title);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: whitesmoke;
+    color: black;
+    padding: 3vw;
+    transition: 0.3s;
+    transform: rotateX(0deg) translateY(0vw);
+    transform-origin: top;
+}
+
+ul li a div:hover::after {
+    transform: rotateX(90deg) translateY(-2vw);
+}
